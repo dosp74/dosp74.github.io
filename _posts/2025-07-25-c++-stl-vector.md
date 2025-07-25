@@ -81,7 +81,7 @@ int main() {
     cout << "\n";
 
     // insert
-    v.insert(v.begin() + 2, 99); // 2번째 위치에 99 삽입
+    v.insert(v.begin() + 2, 99); // 3번째 위치에 99 삽입
     cout << "After insert(2, 99): ";
     for (int n : v) {
         cout << n << " ";
@@ -89,7 +89,7 @@ int main() {
     cout << "\n";
 
     // erase
-    v.erase(v.begin() + 3); // 3번째 요소 제거
+    v.erase(v.begin() + 3); // 4번째 요소 제거
     cout << "After erase(3): ";
     for (int n : v) {
         cout << n << " ";
@@ -148,7 +148,7 @@ After clear(): size = 0, empty = Yes
 
 capacity()는 일반적으로 size()보다 크다.
 push_back() 시 capacity()를 초과하면 2배로 크기를 늘린다.
-이때 기존 데이터를 새로운 메모리로 복사해야 하므로 O(n) 시간이 소요된다.<br>
+이때 기존 데이터를 새로운 메모리로 복사해야 하므로 O(n)의 시간이 소요된다.<br>
 
 따라서 많은 삽입이 예상되면 **reserve()** 를 통해 미리 메모리를 확보할 수 있다.
 
@@ -171,8 +171,8 @@ int main() {
 }
 ```
 
-보통 입력 받을 때 이런 식으로 코드를 많이 짠다. 알아서 크기가 늘어나니까.
-다만,
+보통 입력 받을 때, 알아서 크기가 늘어나므로 이런 식으로 코드를 많이 짠다.
+이때,
 
 ```cpp
 vector<int> v;
