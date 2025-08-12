@@ -31,7 +31,7 @@ tags: [데이터베이스, 인덱스, B+Tree]
 
 ## B+Tree 구조 살펴보기
 
-[B+Tree Visualization](https://cs.csub.edu/~msarr/visualizations/BPlusTree.html)<br>
+[B+Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html)<br>
 
 위 사이트에서 B+Tree를 조작해볼 수 있다.
 
