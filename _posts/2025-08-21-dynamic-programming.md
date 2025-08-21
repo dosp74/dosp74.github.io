@@ -92,7 +92,7 @@ int bin(int n, int k) {
 ### Bottom-Up(반복문 + 테이블 채우기)
 
 ```cpp
-static int memo[n + 1][k + 1];
+static int B[n + 1][k + 1];
 
 int bin(int n, int k) {
     for (int i = 0; i <= n; i++) {
