@@ -36,19 +36,17 @@ OpenCV(Open Source Computer Vision)는 실시간 컴퓨터 비전을 목적으�
 
 ## 세팅
 
-1. 실행용 DLL 경로 추가
+### 실행용 DLL 경로 추가
 
 ```plaintext
-시작 -> 시스템 환경 변수 편집 ->
-환경 변수 -> 시스템 변수에서 `Path` 선택 -> 편집 ->
-새로 만들기 -> `C:\opencv\build\x64\vc16\bin` 입력 -> 확인
+시작 -> 시스템 환경 변수 편집 -> 환경 변수 -> 시스템 변수에서 Path 선택 -> 편집 -> 새로 만들기 -> C:\opencv\build\x64\vc16\bin 입력 -> 확인
 ```
 
-버전에 따라 `\vcxx\` 경로가 바뀔 수 있으니 해당 경로가 실제 있는지 확인하자.
+버전에 따라 `\vcxx\` 경로가 바뀔 수 있으니 해당 경로가 실제로 있는지 확인하자.
 
-이후 Visual Studio에서 C++ 프로젝트를 하나 만든다.
+이후 Visual Studio에서 C++ 프로젝트를 만든다.
 
-2. 포함 디렉터리 설정
+### 포함 디렉터리 설정
 
 ![Image](/assets/images/2025-10-10/2025-10-10-opencv-setting-6.png)
 
@@ -59,31 +57,28 @@ OpenCV(Open Source Computer Vision)는 실시간 컴퓨터 비전을 목적으�
 ![Image](/assets/images/2025-10-10/2025-10-10-opencv-setting-7.png)
 
 ```plaintext
-VC++ 디렉터리 클릭 -> 오른쪽의 포함 디렉터리 선택 -> 드롭다운 -> 편집 ->
-줄 추가 버튼 클릭 -> C:\opencv\build\include 입력 -> 확인 -> 적용
+VC++ 디렉터리 클릭 -> 오른쪽의 포함 디렉터리 선택 -> 드롭다운 -> 편집 -> 줄 추가 버튼 클릭 -> C:\opencv\build\include 입력 -> 확인 -> 적용
 ```
 
-3. 라이브러리 디렉터리 설정
+### 라이브러리 디렉터리 설정
 
 ![Image](/assets/images/2025-10-10/2025-10-10-opencv-setting-8.png)
 
 ```plaintext
-같은 창에서 라이브러리 디렉터리 선택 -> 드롭다운 -> 편집 ->
-줄 추가 버튼 클릭 -> C:\opencv\build\x64\vc16\lib 입력 -> 확인 -> 적용
+같은 창에서 라이브러리 디렉터리 선택 -> 드롭다운 -> 편집 -> 줄 추가 버튼 클릭 -> C:\opencv\build\x64\vc16\lib 입력 -> 확인 -> 적용
 ```
 
-마찬가지로 압축해제 폴더 확인후 `vc16`이 다르면 그 이름으로 변경
+마찬가지로 압축해제 폴더 확인 후 `vc16`이 다르면 그 이름으로 변경
 
-4. 링커 추가 종속성 설정
+### 링커 추가 종속성 설정
 
 ![Image](/assets/images/2025-10-10/2025-10-10-opencv-setting-9.png)
 
 ```plaintext
-왼쪽 구성 속성에서 링커 -> 입력 -> 추가 종속성 선택 -> 드롭다운 -> 편집 ->
-opencv_world4xxd.lib 입력 -> 확인 -> 적용
+왼쪽 구성 속성에서 링커 -> 입력 -> 추가 종속성 선택 -> 드롭다운 -> 편집 -> opencv_world4xxd.lib 입력 -> 확인 -> 적용
 ```
 
-`xx`는 설치한 버전에 맞게 바꾸어야 한다. 필자는 `opencv_world4120d.lib`으로 해주었다.
+`xx`는 설치한 버전에 맞게 바꾸어야 한다. 필자는 `opencv_world4120d.lib`으로 지정해주었다.
 
 참고로 디버그 빌드일 때만 `d`가 붙고, 릴리스 빌드 시에는 `d`가 붙지 않는다.
 
